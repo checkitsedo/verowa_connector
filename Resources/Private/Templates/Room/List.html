@@ -1,0 +1,48 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Room:
+          List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h1>Listing for Room</h1>
+
+    <f:flashMessages />
+
+    <table class="tx_verowaconnect">
+        <tr>
+            <th><f:translate key="tx_verowaconnect_domain_model_room.room_id" /></th>
+            <th><f:translate key="tx_verowaconnect_domain_model_room.room_name" /></th>
+            <th><f:translate key="tx_verowaconnect_domain_model_room.room_public_name" /></th>
+            <th><f:translate key="tx_verowaconnect_domain_model_room.room_location_name" /></th>
+            <th><f:translate key="tx_verowaconnect_domain_model_room.room_location_url" /></th>
+            <th><f:translate key="tx_verowaconnect_domain_model_room.room_location_url_is_external" /></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <f:for each="{rooms}" as="room">
+            <tr>
+                <td><f:link.action action="show" arguments="{room : room}">{room.roomId}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{room : room}">{room.roomName}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{room : room}">{room.roomPublicName}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{room : room}">{room.roomLocationName}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{room : room}">{room.roomLocationUrl}</f:link.action></td>
+                <td><f:link.action action="show" arguments="{room : room}">{room.roomLocationUrlIsExternal}</f:link.action></td>
+                <td><f:link.action action="edit" arguments="{room : room}">Edit</f:link.action></td>
+                <td><f:link.action action="delete" arguments="{room : room}">Delete</f:link.action></td>
+            </tr>
+        </f:for>
+    </table>
+
+    <f:link.action action="new">New Room</f:link.action>
+</f:section>
+</html>
