@@ -1,0 +1,14 @@
+plugin.tx_verowaconnect_eventlist {
+    view {
+        # cat=plugin.tx_verowaconnect_eventlist/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:verowa_connect/Resources/Private/Templates/
+        # cat=plugin.tx_verowaconnect_eventlist/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:verowa_connect/Resources/Private/Partials/
+        # cat=plugin.tx_verowaconnect_eventlist/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:verowa_connect/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_verowaconnect_eventlist//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
