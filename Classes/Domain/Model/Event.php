@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Checkitsedo\VerowaConnect\Domain\Model;
+namespace Checkitsedo\VerowaConnector\Domain\Model;
 
 /*
- * This file is part of the "Verowa Connect" Extension for TYPO3 CMS.
+ * This file is part of the "Verowa Connector" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -25,7 +25,7 @@ class Event extends AbstractEntity
     /**
      * eventId
      *
-     * @var string
+     * @var int
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $eventId = '';
@@ -47,6 +47,20 @@ class Event extends AbstractEntity
     protected $dateTo = 0;
 
     /**
+     * dateText
+     *
+     * @var string
+     */
+    protected $dateText = '';
+
+    /**
+     * hideTime
+     *
+     * @var bool
+     */
+    protected $hideTime = false;
+
+    /**
      * title
      *
      * @var string
@@ -55,11 +69,12 @@ class Event extends AbstractEntity
     protected $title = '';
 
     /**
-     * hideTime
+     * topic
      *
-     * @var bool
+     * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $hideTime = false;
+    protected $topic = '';
 
     /**
      * shortDesc
@@ -76,60 +91,181 @@ class Event extends AbstractEntity
     protected $longDesc = '';
 
     /**
-     * childcareId
+     * organizer
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+    protected $organizer = null;
+
+    /**
+     * coorganizers
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * furtherCoorganizers
      *
      * @var string
+     */
+
+    /**
+     * lectors
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * organists
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * vergers
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * catering
+     *
+     * @var string
+     */
+
+    /**
+     * withSacrament
+     *
+     * @var bool
+     */
+    protected $withSacrament = false;
+	
+    /**
+     * childcareId
+     *
+     * @var int
      */
     protected $childcareId = '';
 
     /**
-     * subscribeDate
-     *
-     * @var int
-     */
-    protected $subscribeDate = 0;
-
-    /**
-     * subscribeTime
-     *
-     * @var int
-     */
-    protected $subscribeTime = 0;
-
-    /**
-     * subscribePersonId
+     * childcareText
      *
      * @var string
      */
-    protected $subscribePersonId = '';
+    protected $childcareText = '';
+
+    /**
+     * childcarePerson
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * additionalText1
+     *
+     * @var string
+     */
+    protected $additionalText1 = '';
+
+    /**
+     * additionalText2
+     *
+     * @var string
+     */
+    protected $additionalText2 = '';
+
+    /**
+     * additionalText4
+     *
+     * @var string
+     */
+    protected $additionalText4 = '';
+
+    /**
+     * subsModuleActive
+     *
+     * @var bool
+     */
+    protected $subsModuleActive = false;
+
+    /**
+     * subsDate
+     *
+     * @var string
+     */
+    protected $subsDate = 0;
+
+    /**
+     * subsText
+     *
+     * @var string
+     */
+    protected $subsText = 0;
+
+    /**
+     * subsPersonId
+     *
+     * @var int
+     */
+    protected $subsPersonId = '';
+
+    /**
+     * datetimeText
+     *
+     * @var string
+     */
+    protected $datetimeText = '';
 
     /**
      * baptismOfferId
      *
-     * @var string
+     * @var int
      */
     protected $baptismOfferId = '';
 
     /**
-     * eventType
+     * baptismOfferText
+     *
+     * @var string
+     */
+    protected $baptismOfferText = '';
+
+    /**
+     * collection
      *
      * @var int
      */
-    protected $eventType = 0;
 
     /**
-     * eventState
+     * targetGroups
      *
-     * @var string
+     * @var int
      */
-    protected $eventState = '';
 
     /**
-     * dateText
+     * layers
      *
-     * @var string
+     * @var int
      */
-    protected $dateText = '';
+
+    /**
+     * rooms
+     *
+     * @var \Checkitsedo\VerowaConnector\Domain\Model\Room
+     */
+    protected $rooms = null;
+
+    /**
+     * files
+     *
+     * @var int
+     */
 
     /**
      * imageUrl
@@ -139,70 +275,28 @@ class Event extends AbstractEntity
     protected $imageUrl = '';
 
     /**
-     * subscriptions
+     * imageWidth
      *
      * @var int
      */
-    protected $subscriptions = 0;
+    protected $imageWidth = '';
 
     /**
-     * organizer
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnect\Domain\Model\Organizer>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
-     */
-    protected $organizer = null;
-
-    /**
-     * rooms
-     *
-     * @var \Checkitsedo\VerowaConnect\Domain\Model\Room
-     */
-    protected $rooms = null;
-
-    /**
-     * roomId
-     *
-     * @var string
-     */
-    protected $roomId = '';
-
-    /**
-     * roomName
-     *
-     * @var string
-     */
-    protected $roomName = '';
-
-    /**
-     * roomPublicName
-     *
-     * @var string
-     */
-    protected $roomPublicName = '';
-
-    /**
-     * roomLocationName
-     *
-     * @var string
-     */
-    protected $roomLocationName = '';
-
-    /**
-     * roomLocationUrl
-     *
-     * @var string
-     */
-    protected $roomLocationUrl = '';
-
-    /**
-     * roomLocationUrlIsExternal
+     * imageHeight
      *
      * @var int
      */
-    protected $roomLocationUrlIsExternal = 0;
+    protected $imageHeight = '';
 
-	/**
+    /**
+     * listImageUrl
+     *
+     * @var string
+     */
+    protected $listImageUrl = '';
+
+
+    /**
      * __construct
      */
     public function __construct()
@@ -228,7 +322,7 @@ class Event extends AbstractEntity
     /**
      * Returns the eventId
      *
-     * @return string $eventId
+     * @return int $eventId
      */
     public function getEventId()
     {
@@ -238,10 +332,10 @@ class Event extends AbstractEntity
     /**
      * Sets the eventId
      *
-     * @param string $eventId
+     * @param int $eventId
      * @return void
      */
-    public function setEventId(string $eventId)
+    public function setEventId(int $eventId)
     {
         $this->eventId = $eventId;
     }
@@ -289,24 +383,24 @@ class Event extends AbstractEntity
     }
 
     /**
-     * Returns the title
+     * Returns the dateText
      *
-     * @return string $title
+     * @return string $dateText
      */
-    public function getTitle()
+    public function getDateText()
     {
-        return $this->title;
+        return $this->dateText;
     }
 
     /**
-     * Sets the title
+     * Sets the dateText
      *
-     * @param string $title
+     * @param string $dateText
      * @return void
      */
-    public function setTitle(string $title)
+    public function setDateText(string $dateText)
     {
-        $this->title = $title;
+        $this->dateText = $dateText;
     }
 
     /**
@@ -338,6 +432,48 @@ class Event extends AbstractEntity
     public function isHideTime()
     {
         return $this->hideTime;
+    }
+
+    /**
+     * Returns the title
+     *
+     * @return string $title
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     * @return void
+     */
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * Returns the topic
+     *
+     * @return string $topic
+     */
+    public function getTopic()
+    {
+        return $this->topic;
+    }
+
+    /**
+     * Sets the topic
+     *
+     * @param string $topic
+     * @return void
+     */
+    public function setTopic(string $topic)
+    {
+        $this->topic = $topic;
     }
 
     /**
@@ -383,9 +519,167 @@ class Event extends AbstractEntity
     }
 
     /**
+     * Adds a Organizer
+     *
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizer
+     * @return void
+     */
+    public function addOrganizer(\Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizer)
+    {
+        $this->organizer->attach($organizer);
+    }
+
+    /**
+     * Removes a Organizer
+     *
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizerToRemove The Organizer to be removed
+     * @return void
+     */
+    public function removeOrganizer(\Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizerToRemove)
+    {
+        $this->organizer->detach($organizerToRemove);
+    }
+
+    /**
+     * Returns the organizer
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     */
+    public function getOrganizer()
+    {
+        return $this->organizer;
+    }
+
+    /**
+     * Sets the organizer
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     * @return void
+     */
+    public function setOrganizer(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $organizer)
+    {
+        $this->organizer = $organizer;
+    }
+
+    /**
+     * Adds a Coorganizer
+     *
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizer
+     * @return void
+     */
+
+    /**
+     * Removes a Coorganizer
+     *
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizerToRemove The Organizer to be removed
+     * @return void
+     */
+
+    /**
+     * Returns the coorganizer
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     */
+ 
+    /**
+     * Sets the coorganizer
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     * @return void
+     */
+
+    /**
+     * Returns the furtherCoorganizers
+     *
+     * @return string $furtherCoorganizers
+     */
+    public function getFurtherCoorganizers()
+    {
+        return $this->furtherCoorganizers;
+    }
+
+    /**
+     * Sets the furtherCoorganizers
+     *
+     * @param string $furtherCoorganizers
+     * @return void
+     */
+    public function setFurtherCoorganizers(string $furtherCoorganizers)
+    {
+        $this->furtherCoorganizers = $furtherCoorganizers;
+    }
+
+    /**
+     * lectors (int)
+     *
+     */
+
+    /**
+     * organists (int)
+     *
+     */
+
+    /**
+     * vergers (int)
+     *
+     */
+
+    /**
+     * Returns the catering
+     *
+     * @return string $catering
+     */
+    public function getCatering()
+    {
+        return $this->catering;
+    }
+
+    /**
+     * Sets the catering
+     *
+     * @param string $catering
+     * @return void
+     */
+    public function setCatering(string $catering)
+    {
+        $this->catering = $catering;
+    }
+
+    /**
+     * Returns the withSacrament
+     *
+     * @return bool $withSacrament
+     */
+    public function getWithSacrament()
+    {
+        return $this->withSacrament;
+    }
+
+    /**
+     * Sets the withSacrament
+     *
+     * @param bool $withSacrament
+     * @return void
+     */
+    public function setWithSacrament(bool $withSacrament)
+    {
+        $this->withSacrament = $withSacrament;
+    }
+
+    /**
+     * Returns the boolean state of withSacrament
+     *
+     * @return bool
+     */
+    public function isWithSacrament()
+    {
+        return $this->withSacrament;
+    }
+
+    /**
      * Returns the childcareId
      *
-     * @return string $childcareId
+     * @return int $childcareId
      */
     public function getChildcareId()
     {
@@ -395,81 +689,206 @@ class Event extends AbstractEntity
     /**
      * Sets the childcareId
      *
-     * @param string $childcareId
+     * @param int $childcareId
      * @return void
      */
-    public function setChildcareId(string $childcareId)
+    public function setChildcareId(int $childcareId)
     {
         $this->childcareId = $childcareId;
     }
 
     /**
-     * Returns the subscribeDate
+     * childcareText (string)
      *
-     * @return int $subscribeDate
      */
-    public function getSubscribeDate()
+
+    /**
+     * childcarePerson (int)
+     *
+     */
+
+    /**
+     * Returns the additionalText1
+     *
+     * @return string $additionalText1
+     */
+    public function getAdditionalText1()
     {
-        return $this->subscribeDate;
+        return $this->additionalText1;
     }
 
     /**
-     * Sets the subscribeDate
+     * Sets the additionalText1
      *
-     * @param int $subscribeDate
+     * @param string $additionalText1
      * @return void
      */
-    public function setSubscribeDate(int $subscribeDate)
+    public function setAdditionalText1(string $additionalText1)
     {
-        $this->subscribeDate = $subscribeDate;
+        $this->additionalText1 = $additionalText1;
     }
 
     /**
-     * Returns the subscribeTime
+     * Returns the additionalText2
      *
-     * @return int $subscribeTime
+     * @return string $additionalText2
      */
-    public function getSubscribeTime()
+    public function getAdditionalText2()
     {
-        return $this->subscribeTime;
+        return $this->additionalText2;
     }
 
     /**
-     * Sets the subscribeTime
+     * Sets the additionalText2
      *
-     * @param int $subscribeTime
+     * @param string $additionalText2
      * @return void
      */
-    public function setSubscribeTime(int $subscribeTime)
+    public function setAdditionalText2(string $additionalText2)
     {
-        $this->subscribeTime = $subscribeTime;
+        $this->additionalText2 = $additionalText2;
     }
 
     /**
-     * Returns the subscribePersonId
+     * Returns the additionalText4
      *
-     * @return string $subscribePersonId
+     * @return string $additionalText4
      */
-    public function getSubscribePersonId()
+    public function getAdditionalText4()
     {
-        return $this->subscribePersonId;
+        return $this->additionalText4;
     }
 
     /**
-     * Sets the subscribePersonId
+     * Sets the additionalText4
      *
-     * @param string $subscribePersonId
+     * @param string $additionalText4
      * @return void
      */
-    public function setSubscribePersonId(string $subscribePersonId)
+    public function setAdditionalText4(string $additionalText4)
     {
-        $this->subscribePersonId = $subscribePersonId;
+        $this->additionalText4 = $additionalText4;
+    }
+
+    /**
+     * Returns the subsModuleActive
+     *
+     * @return bool $subsModuleActive
+     */
+    public function getSubsModuleActive()
+    {
+        return $this->subsModuleActive;
+    }
+
+    /**
+     * Sets the subsModuleActive
+     *
+     * @param bool $subsModuleActive
+     * @return void
+     */
+    public function setSubsModuleActive(bool $subsModuleActive)
+    {
+        $this->subsModuleActive = $subsModuleActive;
+    }
+
+    /**
+     * Returns the boolean state of subsModuleActive
+     *
+     * @return bool
+     */
+    public function isSubsModuleActive()
+    {
+        return $this->subsModuleActive;
+    }
+
+    /**
+     * Returns the subsDate
+     *
+     * @return string $subsDate
+     */
+    public function getSubsDate()
+    {
+        return $this->subsDate;
+    }
+
+    /**
+     * Sets the subsDate
+     *
+     * @param string $subsDate
+     * @return void
+     */
+    public function setSubsDate(string $subsDate)
+    {
+        $this->subsDate = $subsDate;
+    }
+
+    /**
+     * Returns the subsText
+     *
+     * @return string $subsText
+     */
+    public function getSubsText()
+    {
+        return $this->subsText;
+    }
+
+    /**
+     * Sets the subsText
+     *
+     * @param string $subsText
+     * @return void
+     */
+    public function setSubsText(string $subsText)
+    {
+        $this->subsText = $subsText;
+    }
+
+    /**
+     * Returns the subsPersonId
+     *
+     * @return int $subsPersonId
+     */
+    public function getSubsPersonId()
+    {
+        return $this->subsPersonId;
+    }
+
+    /**
+     * Sets the subsPersonId
+     *
+     * @param int $subsPersonId
+     * @return void
+     */
+    public function setSubsPersonId(int $subsPersonId)
+    {
+        $this->subsPersonId = $subsPersonId;
+    }
+
+    /**
+     * Returns the datetimeText
+     *
+     * @return string $datetimeText
+     */
+    public function getDatetimeText()
+    {
+        return $this->datetimeText;
+    }
+
+    /**
+     * Sets the datetimeText
+     *
+     * @param string $datetimeText
+     * @return void
+     */
+    public function setDatetimeText(string $datetimeText)
+    {
+        $this->datetimeText = $datetimeText;
     }
 
     /**
      * Returns the baptismOfferId
      *
-     * @return string $baptismOfferId
+     * @return int $baptismOfferId
      */
     public function getBaptismOfferId()
     {
@@ -479,75 +898,117 @@ class Event extends AbstractEntity
     /**
      * Sets the baptismOfferId
      *
-     * @param string $baptismOfferId
+     * @param int $baptismOfferId
      * @return void
      */
-    public function setBaptismOfferId(string $baptismOfferId)
+    public function setBaptismOfferId(int $baptismOfferId)
     {
         $this->baptismOfferId = $baptismOfferId;
     }
 
     /**
-     * Returns the eventType
+     * Returns the baptismOfferText
      *
-     * @return int $eventType
+     * @return string $baptismOfferText
      */
-    public function getEventType()
+    public function getBaptismOfferText()
     {
-        return $this->eventType;
+        return $this->baptismOfferText;
     }
 
     /**
-     * Sets the eventType
+     * Sets the baptismOfferText
      *
-     * @param int $eventType
+     * @param string $baptismOfferText
      * @return void
      */
-    public function setEventType(int $eventType)
+    public function setBaptismOfferText(string $baptismOfferText)
     {
-        $this->eventType = $eventType;
+        $this->baptismOfferText = $baptismOfferText;
     }
 
     /**
-     * Returns the eventState
+     * Returns the collection
      *
-     * @return string $eventState
+     * @return int $collection
      */
-    public function getEventState()
+    public function getCollection()
     {
-        return $this->eventState;
+        return $this->collection;
     }
 
     /**
-     * Sets the eventState
+     * Sets the collection
      *
-     * @param string $eventState
+     * @param int $collection
      * @return void
      */
-    public function setEventState(string $eventState)
+    public function setCollection(int $collection)
     {
-        $this->eventState = $eventState;
+        $this->collection = $collection;
     }
 
     /**
-     * Returns the dateText
+     * Returns the targetGroups
      *
-     * @return string $dateText
+     * @return int $targetGroups
      */
-    public function getDateText()
+    public function getTargetGroups()
     {
-        return $this->dateText;
+        return $this->targetGroups;
     }
 
     /**
-     * Sets the dateText
+     * Sets the targetGroups
      *
-     * @param string $dateText
+     * @param int $targetGroups
      * @return void
      */
-    public function setDateText(string $dateText)
+    public function setTargetGroups(int $targetGroups)
     {
-        $this->dateText = $dateText;
+        $this->targetGroups = $targetGroups;
+    }
+
+    /**
+     * Returns the layers
+     *
+     * @return int $layers
+     */
+    public function getLayers()
+    {
+        return $this->layers;
+    }
+
+    /**
+     * Sets the layers
+     *
+     * @param int $layers
+     * @return void
+     */
+    public function setLayers(int $layers)
+    {
+        $this->layers = $layers;
+    }
+
+    /**
+     * Returns the rooms
+     *
+     * @return \Checkitsedo\VerowaConnector\Domain\Model\Room $rooms
+     */
+    public function getRooms()
+    {
+        return $this->rooms;
+    }
+
+    /**
+     * Sets the rooms
+     *
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Room $rooms
+     * @return void
+     */
+    public function setRooms(\Checkitsedo\VerowaConnect\Domain\Model\Room $rooms)
+    {
+        $this->rooms = $rooms;
     }
 
     /**
@@ -572,211 +1033,66 @@ class Event extends AbstractEntity
     }
 
     /**
-     * Returns the subscriptions
+     * Returns the imageWidth
      *
-     * @return int $subscriptions
+     * @return int $imageWidth
      */
-    public function getSubscriptions()
+    public function getImageWidth()
     {
-        return $this->subscriptions;
+        return $this->imageWidth;
     }
 
     /**
-     * Sets the subscriptions
+     * Sets the imageWidth
      *
-     * @param int $subscriptions
+     * @param int $imageWidth
      * @return void
      */
-    public function setSubscriptions(int $subscriptions)
+    public function setImageWidth(int $imageWidth)
     {
-        $this->subscriptions = $subscriptions;
+        $this->imageWidth = $imageWidth;
     }
 
     /**
-     * Adds a Organizer
+     * Returns the imageHeight
      *
-     * @param \Checkitsedo\VerowaConnect\Domain\Model\Organizer $organizer
+     * @return int $imageHeight
+     */
+    public function getImageHeight()
+    {
+        return $this->imageHeight;
+    }
+
+    /**
+     * Sets the imageHeight
+     *
+     * @param int $imageHeight
      * @return void
      */
-    public function addOrganizer(\Checkitsedo\VerowaConnect\Domain\Model\Organizer $organizer)
+    public function setImageHeight(int $imageHeight)
     {
-        $this->organizer->attach($organizer);
+        $this->imageHeight = $imageHeight;
     }
 
     /**
-     * Removes a Organizer
+     * Returns the listImageUrl
      *
-     * @param \Checkitsedo\VerowaConnect\Domain\Model\Organizer $organizerToRemove The Organizer to be removed
+     * @return string $listImageUrl
+     */
+    public function getListImageUrl()
+    {
+        return $this->listImageUrl;
+    }
+
+    /**
+     * Sets the listImageUrl
+     *
+     * @param string $listImageUrl
      * @return void
      */
-    public function removeOrganizer(\Checkitsedo\VerowaConnect\Domain\Model\Organizer $organizerToRemove)
+    public function setListImageUrl(string $listImageUrl)
     {
-        $this->organizer->detach($organizerToRemove);
-    }
-
-    /**
-     * Returns the organizer
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnect\Domain\Model\Organizer> $organizer
-     */
-    public function getOrganizer()
-    {
-        return $this->organizer;
-    }
-
-    /**
-     * Sets the organizer
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnect\Domain\Model\Organizer> $organizer
-     * @return void
-     */
-    public function setOrganizer(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $organizer)
-    {
-        $this->organizer = $organizer;
-    }
-
-    /**
-     * Returns the rooms
-     *
-     * @return \Checkitsedo\VerowaConnect\Domain\Model\Room $rooms
-     */
-    public function getRooms()
-    {
-        return $this->rooms;
-    }
-
-    /**
-     * Sets the rooms
-     *
-     * @param \Checkitsedo\VerowaConnect\Domain\Model\Room $rooms
-     * @return void
-     */
-    public function setRooms(\Checkitsedo\VerowaConnect\Domain\Model\Room $rooms)
-    {
-        $this->rooms = $rooms;
-    }
-
-    /**
-     * Returns the roomId
-     *
-     * @return string $roomId
-     */
-    public function getRoomId()
-    {
-        return $this->roomId;
-    }
-
-    /**
-     * Sets the roomId
-     *
-     * @param string $roomId
-     * @return void
-     */
-    public function setRoomId(string $roomId)
-    {
-        $this->roomId = $roomId;
-    }
-
-    /**
-     * Returns the roomName
-     *
-     * @return string $roomName
-     */
-    public function getRoomName()
-    {
-        return $this->roomName;
-    }
-
-    /**
-     * Sets the roomName
-     *
-     * @param string $roomName
-     * @return void
-     */
-    public function setRoomName(string $roomName)
-    {
-        $this->roomName = $roomId;
-    }
-    /**
-     * Returns the roomPublicName
-     *
-     * @return string $roomPublicName
-     */
-    public function getRoomPublicName()
-    {
-        return $this->roomPublicName;
-    }
-
-    /**
-     * Sets the roomPublicName
-     *
-     * @param string $roomPublicName
-     * @return void
-     */
-    public function setRoomPublicName(string $roomPublicName)
-    {
-        $this->roomPublicName = $roomPublicName;
-    }
-    /**
-     * Returns the roomLocationName
-     *
-     * @return string $roomLocationName
-     */
-    public function getRoomLocationName()
-    {
-        return $this->roomLocationName;
-    }
-
-    /**
-     * Sets the roomLocationName
-     *
-     * @param string $roomLocationName
-     * @return void
-     */
-    public function setRoomLocationName(string $roomLocationName)
-    {
-        $this->roomLocationName = $roomLocationName;
-    }
-    /**
-     * Returns the roomLocationUrl
-     *
-     * @return string $roomLocationUrl
-     */
-    public function getRoomLocationUrl()
-    {
-        return $this->roomLocationUrl;
-    }
-
-    /**
-     * Sets the roomLocationUrl
-     *
-     * @param string $roomLocationUrl
-     * @return void
-     */
-    public function setRoomLocationUrl(string $roomLocationUrl)
-    {
-        $this->roomLocationUrl = $roomId;
-    }
-
-    /**
-     * Returns the roomLocationUrlIsExternal
-     *
-     * @return int $roomLocationUrlIsExternal
-     */
-    public function getRoomLocationUrlIsExternal()
-    {
-        return $this->roomLocationUrlIsExternal;
-    }
-
-    /**
-     * Sets the roomLocationUrlIsExternal
-     *
-     * @param int $roomLocationUrlIsExternal
-     * @return void
-     */
-    public function setRoomLocationUrlIsExternal(int $roomLocationUrlIsExternal)
-    {
-        $this->roomLocationUrlIsExternal = $roomLocationUrlIsExternal;
+        $this->listImageUrl = $listImageUrl;
     }
 
 }
