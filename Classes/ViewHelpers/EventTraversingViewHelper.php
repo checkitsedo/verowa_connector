@@ -5,10 +5,10 @@
  */
 declare(strict_types=1);
 
-namespace Checkitsedo\VerowaConnect\ViewHelpers;
+namespace Checkitsedo\VerowaConnector\ViewHelpers;
 
-use Checkitsedo\VerowaConnect\Domain\Model\Event;
-use Checkitsedo\VerowaConnect\Domain\Repository\EventRepository;
+use Checkitsedo\VerowaConnector\Domain\Model\Event;
+use Checkitsedo\VerowaConnector\Domain\Repository\EventRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
@@ -19,7 +19,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
  * == Examples ==
  *
  * <code title="Traversing thru future and past occurings of the event">
- * {namespace checkit=Checkitsedo\VerowaConnect\ViewHelpers}
+ * {namespace checkit=Checkitsedo\VerowaConnector\ViewHelpers}
  * <f:for each="{checkit:eventTraversing(event:'{event}', limit:'{settings.limitrecord}', sort: 'ASC')}" as="futureEvent">
  *  <f:debug>{futureEvent}</f:debug>
  * </f:for>
