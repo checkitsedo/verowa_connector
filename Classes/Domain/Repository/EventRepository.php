@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Checkitsedo\VerowaConnect\Domain\Repository;
+namespace Checkitsedo\VerowaConnector\Domain\Repository;
 
 /**
  * This file is part of the "Verowa Connect" Extension for TYPO3 CMS.
