@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Checkitsedo\VerowaConnect\Controller;
+namespace Checkitsedo\VerowaConnector\Controller;
 
 
 /**
- * This file is part of the "Verowa Connect" Extension for TYPO3 CMS.
+ * This file is part of the "Verowa Connector" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -23,14 +23,14 @@ class OrganizerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     /**
      * organizerRepository
      *
-     * @var \Checkitsedo\VerowaConnect\Domain\Repository\OrganizerRepository
+     * @var \Checkitsedo\VerowaConnector\Domain\Repository\OrganizerRepository
      */
     protected $organizerRepository = null;
 
     /**
-     * @param \Checkitsedo\VerowaConnect\Domain\Repository\OrganizerRepository $organizerRepository
+     * @param \Checkitsedo\VerowaConnector\Domain\Repository\OrganizerRepository $organizerRepository
      */
-    public function injectOrganizerRepository(\Checkitsedo\VerowaConnect\Domain\Repository\OrganizerRepository $organizerRepository)
+    public function injectOrganizerRepository(\Checkitsedo\VerowaConnector\Domain\Repository\OrganizerRepository $organizerRepository)
     {
         $this->organizerRepository = $organizerRepository;
     }
