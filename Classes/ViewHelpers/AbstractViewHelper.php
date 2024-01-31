@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace Checkitsedo\VerowaConnect\ViewHelpers;
+namespace Checkitsedo\VerowaConnector\ViewHelpers;
 
 /**
  * AbstractViewHelper.
