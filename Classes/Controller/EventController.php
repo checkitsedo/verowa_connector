@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Checkitsedo\VerowaConnect\Controller;
+namespace Checkitsedo\VerowaConnector\Controller;
 
 /*
- * This file is part of the "Verowa Connect" Extension for TYPO3 CMS.
+ * This file is part of the "Verowa Connector" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -13,8 +13,8 @@ namespace Checkitsedo\VerowaConnect\Controller;
  * (c) 2021 Dominik Senti <info@senti.lu>, checkit senti.lu
  */
 
-use Checkitsedo\VerowaConnect\Domain\Model\Event;
-use Checkitsedo\VerowaConnect\Domain\Repository\EventRepository;
+use Checkitsedo\VerowaConnector\Domain\Model\Event;
+use Checkitsedo\VerowaConnector\Domain\Repository\EventRepository;
 use GeorgRinger\NumberedPagination\NumberedPagination;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -30,14 +30,14 @@ class EventController extends ActionController
     /**
      * eventRepository
      *
-     * @var \Checkitsedo\VerowaConnect\Domain\Repository\EventRepository
+     * @var \Checkitsedo\VerowaConnector\Domain\Repository\EventRepository
      */
     protected $eventRepository = null;
 
     /**
-     * @param \Checkitsedo\VerowaConnect\Domain\Repository\EventRepository $eventRepository
+     * @param \Checkitsedo\VerowaConnector\Domain\Repository\EventRepository $eventRepository
      */
-    public function injectEventRepository(\Checkitsedo\VerowaConnect\Domain\Repository\EventRepository $eventRepository)
+    public function injectEventRepository(\Checkitsedo\VerowaConnector\Domain\Repository\EventRepository $eventRepository)
     {
         $this->eventRepository = $eventRepository;
     }
@@ -69,10 +69,10 @@ class EventController extends ActionController
     /**
      * action show
      *
-     * @param \Checkitsedo\VerowaConnect\Domain\Model\Event $event
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Event $event
      * @return string|object|null|void
      */
-    public function showAction(\Checkitsedo\VerowaConnect\Domain\Model\Event $event)
+    public function showAction(\Checkitsedo\VerowaConnector\Domain\Model\Event $event)
     {
         $this->view->assign('event', $event);
     }
