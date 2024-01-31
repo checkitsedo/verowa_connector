@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Checkitsedo\VerowaConnect\Controller;
+namespace Checkitsedo\VerowaConnector\Controller;
 
 
 /**
- * This file is part of the "Verowa Connect" Extension for TYPO3 CMS.
+ * This file is part of the "Verowa Connector" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -23,14 +23,14 @@ class RoomController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * roomRepository
      *
-     * @var \Checkitsedo\VerowaConnect\Domain\Repository\RoomRepository
+     * @var \Checkitsedo\VerowaConnector\Domain\Repository\RoomRepository
      */
     protected $roomRepository = null;
 
     /**
-     * @param \Checkitsedo\VerowaConnect\Domain\Repository\RoomRepository $roomRepository
+     * @param \Checkitsedo\VerowaConnector\Domain\Repository\RoomRepository $roomRepository
      */
-    public function injectRoomRepository(\Checkitsedo\VerowaConnect\Domain\Repository\RoomRepository $roomRepository)
+    public function injectRoomRepository(\Checkitsedo\VerowaConnector\Domain\Repository\RoomRepository $roomRepository)
     {
         $this->roomRepository = $roomRepository;
     }
