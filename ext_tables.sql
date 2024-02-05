@@ -101,6 +101,7 @@ CREATE TABLE tx_verowaconnector_domain_model_layer (
 	layer_id int(11) unsigned NOT NULL,
 	name varchar(255) NOT NULL DEFAULT '',
 	parent_id int(11) unsigned NOT NULL,
+	events int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'events (events) count',
 );
 
 #
@@ -117,6 +118,7 @@ CREATE TABLE tx_verowaconnector_domain_model_room (
 	room_id int(11) unsigned,
 	shortcut varchar(40) NOT NULL DEFAULT '',
 	location_url varchar(1024),
+	events int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'events (events) count',
 
 	UNIQUE room_id (room_id),
 );
