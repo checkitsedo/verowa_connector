@@ -19,6 +19,27 @@ return [
         'searchFields' => 'person_id,name,firstname,lastname,phone,profession,email',
         'iconfile' => 'EXT:verowa_connector/Resources/Public/Icons/tx_verowaconnector_domain_model_person.gif'
     ],
+    'external' => [
+		'general' => [
+			0 => [
+				'connector' => 'json',
+				'parameters' => [
+					'uri' => 'https://api.verowa.ch/geteventdetails/stjosef-zuerich/1ad89c27e1a89ef6aa34f34e4adf7448/0',
+					'encoding' => 'utf-8',
+					'headers' => [
+						'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:75.0) Gecko/20100101 Firefox/75.0',
+						'Accept' => 'application/json'
+					]
+				],
+				'data' => 'array',
+				'arrayPath' => 'events',
+				'referenceUid' => 'event_id',
+				'group' => 'stjosef',
+				'priority' => 10,
+				'description' => 'Import of all events from Verowa'
+			]
+		]
+	],
     'types' => [
         '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, person_id, name, firstname, lastname, phone, profession, email, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
