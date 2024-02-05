@@ -19,6 +19,27 @@ return [
         'searchFields' => 'room_id,room_name,room_public_name,room_location_name,room_location_url',
         'iconfile' => 'EXT:verowa_connect/Resources/Public/Icons/tx_verowaconnect_domain_model_room.gif'
     ],
+    'external' => [
+		'general' => [
+			0 => [
+				'connector' => 'json',
+				'parameters' => [
+					'uri' => 'https://api.verowa.ch/getrooms/stjosef-zuerich/1ad89c27e1a89ef6aa34f34e4adf7448',
+					'encoding' => 'utf-8',
+					'headers' => [
+						'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:75.0) Gecko/20100101 Firefox/75.0',
+						'Accept' => 'application/json'
+					]
+				],
+				'data' => 'array',
+				'arrayPath' => 'rooms',
+				'referenceUid' => 'room_id',
+				'group' => 'stjosef',
+				'priority' => 10,
+				'description' => 'Import of all events from Verowa'
+			]
+		]
+	],
     'types' => [
         '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, room_id, room_name, room_public_name, room_location_name, room_location_url, room_location_url_is_external, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
@@ -104,9 +125,9 @@ return [
             ],
         ],
 
-        'room_id' => [
+        'location_name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_room.room_id',
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.location_name',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -114,9 +135,9 @@ return [
                 'default' => ''
             ],
         ],
-        'room_name' => [
+        'location_id' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_room.room_name',
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.location_id',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -124,9 +145,9 @@ return [
                 'default' => ''
             ],
         ],
-        'room_public_name' => [
+        'street' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_room.room_public_name',
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.street',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -134,9 +155,9 @@ return [
                 'default' => ''
             ],
         ],
-        'room_location_name' => [
+        'postcode' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_room.room_location_name',
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.postcode',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -144,9 +165,9 @@ return [
                 'default' => ''
             ],
         ],
-        'room_location_url' => [
+        'city' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_room.room_location_url',
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.city',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -154,9 +175,9 @@ return [
                 'default' => ''
             ],
         ],
-        'room_location_url_is_external' => [
+        'location_url_is_external' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_room.room_location_url_is_external',
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.location_url_is_external',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -169,6 +190,45 @@ return [
                 'default' => 0,
             ]
         ],
-    
+        'room_name' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.room_name',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => ''
+            ],
+        ],
+        'room_id' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.room_id',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => ''
+            ],
+        ],
+        'shortcut' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.shortcut',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => ''
+            ],
+        ],
+        'location_url' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_room.location_url',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+                'default' => ''
+            ],
+        ],    
     ],
 ];
