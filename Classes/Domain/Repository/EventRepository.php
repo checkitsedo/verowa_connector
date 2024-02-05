@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Checkitsedo\VerowaConnector\Domain\Repository;
 
 /**
- * This file is part of the "Verowa Connect" Extension for TYPO3 CMS.
+ * This file is part of the "Verowa Connector" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -40,7 +40,7 @@ $query->setOrderings(['date_from' => \TYPO3\CMS\Extbase\Persistence\QueryInterfa
     }
 
 
-	/**
+    /**
      * Returns events greater then specified date.
      * 
      * @param \DateTime $dateFrom
@@ -49,10 +49,10 @@ $query->setOrderings(['date_from' => \TYPO3\CMS\Extbase\Persistence\QueryInterfa
     public function findWhereDateGreaterThen()
     {
         $query = $this->createQuery();
-		$date = new \DateTime('now');
+	$date = new \DateTime('now');
         $query->matching(
-			$query->greaterThanOrEqual('date_from', $date->format('Y-m-d H:i:s'))
-		);
+		$query->greaterThanOrEqual('date_from', $date->format('Y-m-d H:i:s'))
+	);
         $query->setOrderings(['date_from' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING]);
         return $query->execute();
     }
