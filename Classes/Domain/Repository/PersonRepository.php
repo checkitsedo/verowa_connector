@@ -15,7 +15,7 @@ namespace Checkitsedo\VerowaConnector\Domain\Repository;
  */
 
 /**
- * The repository for Organizers
+ * The repository for P
  */
 class OrganizerRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
