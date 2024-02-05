@@ -15,8 +15,8 @@ namespace Checkitsedo\VerowaConnector\Domain\Repository;
  */
 
 /**
- * The repository for P
+ * The repository for Persons
  */
-class OrganizerRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class PersonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 }
