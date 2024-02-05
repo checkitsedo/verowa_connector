@@ -4,21 +4,21 @@
 				wizards.newContentElement.wizardItems.plugins {
 					elements {
 						eventlist {
-							iconIdentifier = verowa_connect-plugin-eventlist
-							title = LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowa_connect_eventlist.name
-							description = LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowa_connect_eventlist.description
+							iconIdentifier = verowa_connector-plugin-eventlist
+							title = LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowa_connector_eventlist.name
+							description = LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowa_connector_eventlist.description
 							tt_content_defValues {
 								CType = list
-								list_type = verowaconnect_eventlist
+								list_type = verowaconnector_eventlist
 							}
 						}
 						eventdetails {
-							iconIdentifier = verowa_connect-plugin-eventdetails
-							title = LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowa_connect_eventdetails.name
-							description = LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowa_connect_eventdetails.description
+							iconIdentifier = verowa_connector-plugin-eventdetails
+							title = LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowa_connector_eventdetails.name
+							description = LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowa_connector_eventdetails.description
 							tt_content_defValues {
 								CType = list
-								list_type = verowaconnect_eventdetails
+								list_type = verowaconnector_eventdetails
 							}
 						}
 					}
