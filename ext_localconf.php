@@ -32,24 +32,23 @@ call_user_func(
 			]
 		);
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:verowa_connector/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig">'
-);
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+			'<INCLUDE_TYPOSCRIPT: source="FILE:EXT:verowa_connector/Configuration/TsConfig/Page/Mod/Wizards/NewContentElement.tsconfig">'
+		);
 
-		
 		$icons = [
-            'verowa_connector-plugin-eventlist' => 'EXT:verowa_connector/Resources/Public/Icons/user_plugin_eventlist.svg',
+			'verowa_connector-plugin-eventlist' => 'EXT:verowa_connector/Resources/Public/Icons/user_plugin_eventlist.svg',
 			'verowa_connector-plugin-eventdetails' => 'EXT:verowa_connector/Resources/Public/Icons/user_plugin_eventdetails.svg',
-        ];
+		];
 		
 		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 		foreach ($icons as $identifier => $path) {
-            $iconRegistry->registerIcon(
-                $identifier,
-                \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                ['source' => $path]
-            );
-        };
+			$iconRegistry->registerIcon(
+				$identifier,
+				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+				['source' => $path]
+			);
+		};
 		
 		// wizards
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
