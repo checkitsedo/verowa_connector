@@ -15,7 +15,7 @@ namespace Checkitsedo\VerowaConnector\Controller;
  */
 
 /**
- * OrganizerController
+ * POrganizerController
  */
 class OrganizerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
