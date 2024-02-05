@@ -81,6 +81,7 @@ CREATE TABLE tx_verowaconnector_domain_model_person (
 	email varchar(255) NOT NULL DEFAULT '',
 	url varchar(1024) NOT NULL DEFAULT '',
 	url_type int(11) unsigned NOT NULL,
+	events int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'events (events) count',
 );
 
 #
