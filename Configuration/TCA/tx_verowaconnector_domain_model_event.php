@@ -1,4 +1,3 @@
-
 <?php
 return [
 	'ctrl' => [
@@ -128,26 +127,25 @@ return [
 		],
 
 		'event_id' => [
-	
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.event_id',
-            'config' => [
-                'type' => 'input',
-            ],
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.event_id',
+			'config' => [
+				'type' => 'input',
+			],
 			'external' => [
 				0 => [
 					'field' => 'event_id'
 				]
 			]
-        ],
-        'date_from' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.date_from',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
-            ],
+		],
+		'date_from' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.date_from',
+			'config' => [
+				'type' => 'input',
+				'renderType' => 'inputDateTime',
+				'eval' => 'datetime',
+			],
 			'external' => [
 				0 => [
 					'field' => 'date_from',
@@ -164,15 +162,15 @@ return [
 					]
 				]
 			]
-        ],
-        'date_to' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.date_to',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
-            ],
+		],
+		'date_to' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.date_to',
+			'config' => [
+				'type' => 'input',
+				'renderType' => 'inputDateTime',
+				'eval' => 'datetime',
+			],
 			'external' => [
 				0 => [
 					'field' => 'date_to',
@@ -189,377 +187,295 @@ return [
 					]
 				]
 			]
-        ],
-        'title' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.title',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
+		],
+		'date_text' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.date_text',
+			'config' => [
+				'type' => 'input',
+				'size' => 50,
 				'max' => 255,
-                'eval' => 'trim',
-            ],
-			'external' => [
-				0 => [
-					'field' => 'title'
-				]
-			]
-        ],
-        'hide_time' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.hide_time',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ]
-                ],
-                'default' => 0,
-            ],
-			'external' => [
-				0 => [
-					'field' => 'hide_time'
-				]
-			]
-        ],
-        'short_desc' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.short_desc',
-            'config' => [
-                'type' => 'text',
-            ],
-			'external' => [
-				0 => [
-					'field' => 'short_desc'
-				]
-			]
-        ],
-        'long_desc' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.long_desc',
-            'config' => [
-                'type' => 'text',
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
-                'fieldControl' => [
-                    'fullScreenRichtext' => [
-                        'disabled' => false,
-                    ],
-                ],
-                'cols' => 40,
-                'rows' => 15,
-                'eval' => 'trim',
-            ],
-			'external' => [
-				0 => [
-					'field' => 'long_desc'
-				]
-			]
-            
-        ],
-        'childcare_id' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.childcare_id',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
-				'max' => 255,
-                'eval' => 'trim',
-            ],
-			'external' => [
-				0 => [
-					'field' => 'childcare_id'
-				]
-			]
-        ],
-        'subscribe_date' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.subscribe_date',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
-            ],
-			'external' => [
-				0 => [
-					'field' => 'subscribe_date',
-					'transformations' => [
-						10 => [
-							'userFunction' => [
-								'class' => \Cobweb\ExternalImport\Transformation\DateTimeTransformation::class,
-								'method' => 'parseDate',
-								'parameters' => [
-									'enforceTimeZone' => true
-								]
-							]
-						]
-					]
-				]
-			]
-        ],
-        'subscribe_time' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.subscribe_time',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
-            ],
-			'external' => [
-				0 => [
-					'field' => 'subscribe_time',
-					'transformations' => [
-						10 => [
-							'userFunction' => [
-								'class' => \Cobweb\ExternalImport\Transformation\DateTimeTransformation::class,
-								'method' => 'parseDate',
-								'parameters' => [
-									'enforceTimeZone' => true
-								]
-							]
-						]
-					]
-				]
-			]
-        ],
-        'subscribe_person_id' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.subscribe_person_id',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
-                'default' => ''
-            ],
-			'external' => [
-				0 => [
-					'field' => 'subscribe_person_id'
-				]
-			]
-        ],
-        'baptism_offer_id' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.baptism_offer_id',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
-                'max' => 255,
-                'eval' => 'trim'
-            ],
-			'external' => [
-				0 => [
-					'field' => 'baptism_offer_id'
-				]
-			]
-        ],
-        'event_type' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.event_type',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
-                'max' => 255,
-                'eval' => 'trim'
-            ],
-			'external' => [
-				0 => [
-					'field' => 'event_type'
-				]
-			]
-        ],
-        'event_state' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.event_state',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
-                'max' => 255,
-                'eval' => 'trim'
-            ],
-			'external' => [
-				0 => [
-					'field' => 'state'
-				]
-			]
-        ],
-        'date_text' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.date_text',
-            'config' => [
-                'type' => 'input',
-                'size' => 50,
-				'max' => 255,
-                'eval' => 'trim',
-            ],
+				'eval' => 'trim',
+			],
 			'external' => [
 				0 => [
 					'field' => 'date_text'
 				]
 			]
-        ],
-        'image_url' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.image_url',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
-                'size' => 50,
-                'max' => 255,
-                'eval' => 'trim',
-                'fieldControl' => [
-                    'linkPopup' => [
-                        'options' => [
-                            'blindLinkFields' => 'class, params, target, title',
-                            'blindLinkOptions' => 'file, folder, mail, page, spec, telephone',
-                        ],
-                    ],
-                ],
-            ],
+		],
+		'hide_time' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.hide_time',
+			'config' => [
+				'type' => 'check',
+				'renderType' => 'checkboxToggle',
+				'items' => [
+					[
+						0 => '',
+						1 => '',
+					]
+				],
+				'default' => 0,
+			],
+			'external' => [
+				0 => [
+					'field' => 'hide_time'
+				]
+			]
+		],
+		'title' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.title',
+			'config' => [
+				'type' => 'input',
+				'size' => 50,
+				'max' => 255,
+				'eval' => 'trim',
+			],
+			'external' => [
+				0 => [
+					'field' => 'title'
+				]
+			]
+		],
+		'topic' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.topic',
+			'config' => [
+				'type' => 'input',
+				'size' => 50,
+				'max' => 255,
+				'eval' => 'trim',
+			],
+			'external' => [
+				0 => [
+					'field' => 'topic'
+				]
+			]
+		],
+		'short_desc' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.short_desc',
+			'config' => [
+				'type' => 'text',
+			],
+			'external' => [
+				0 => [
+					'field' => 'short_desc'
+				]
+			]
+		],
+		'long_desc' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.long_desc',
+			'config' => [
+				'type' => 'text',
+				'enableRichtext' => true,
+				'richtextConfiguration' => 'default',
+				'fieldControl' => [
+					'fullScreenRichtext' => [
+						'disabled' => false,
+					],
+				],
+				'cols' => 40,
+				'rows' => 15,
+				'eval' => 'trim',
+			],
+			'external' => [
+				0 => [
+					'field' => 'long_desc'
+				]
+			]
+		],
+		'organizer' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.organizer',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'foreign_table' => 'tx_verowaconnect_domain_model_person',
+				'default' => 0,
+				'minitems' => 0,
+				'maxitems' => 1,
+			],
+		],
+		'coorganizers' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.coorganizers',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectMultiple',
+				'foreign_table' => 'tx_verowaconnector_domain_model_person',
+				'MM' => 'tx_verowaconnector_domain_model_event_person_mm',
+				'default' => 0,
+				'minitems' => 0,
+				'maxitems' => 999,
+			],
+		],
+		'subs_date' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.subs_date',
+			'config' => [
+				'type' => 'input',
+				'renderType' => 'inputDateTime',
+				'eval' => 'datetime',
+			],
+			'external' => [
+				0 => [
+					'field' => 'subs_date',
+					'transformations' => [
+						10 => [
+							'userFunction' => [
+								'class' => \Cobweb\ExternalImport\Transformation\DateTimeTransformation::class,
+								'method' => 'parseDate',
+								'parameters' => [
+									'enforceTimeZone' => true
+								]
+							]
+						]
+					]
+				]
+			]
+		],
+		'subs_text' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.subs_text',
+			'config' => [
+				'type' => 'text',
+			],
+			'external' => [
+				0 => [
+					'field' => 'subs_text',
+				]
+			]
+		],
+		'subs_person_id' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.subs_person_id',
+			'config' => [
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim',
+				'default' => ''
+			],
+			'external' => [
+				0 => [
+					'field' => 'subs_person_id'
+				]
+			]
+		],
+		'baptism_offer_id' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.baptism_offer_id',
+			'config' => [
+				'type' => 'input',
+				'size' => 50,
+				'max' => 255,
+				'eval' => 'trim'
+			],
+			'external' => [
+				0 => [
+					'field' => 'baptism_offer_id'
+				]
+			]
+		],
+		'baptism_offer_text' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.baptism_offer_text',
+			'config' => [
+				'type' => 'text',
+			],
+			'external' => [
+				0 => [
+					'field' => 'baptism_offer_text'
+				]
+			]
+		],
+		'target_groups' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.target_groups',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectMultiple',
+				'foreign_table' => 'tx_verowaconnector_domain_model_targetgroup',
+				'MM' => 'tx_verowaconnector_domain_model_event_targetgroup_mm',
+				'default' => 0,
+				'minitems' => 0,
+				'maxitems' => 999,
+			],
+		],
+		'layers' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.layers',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectMultiple',
+				'foreign_table' => 'tx_verowaconnector_domain_model_layer',
+				'MM' => 'tx_verowaconnector_domain_model_event_layer_mm',
+				'default' => 0,
+				'minitems' => 0,
+				'maxitems' => 999,
+			],
+		],
+		'rooms' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.rooms',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'foreign_table' => 'tx_verowaconnect_domain_model_room',
+				'default' => 0,
+				'minitems' => 0,
+				'maxitems' => 1,
+			],
+		],
+		'image_url' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.image_url',
+			'config' => [
+				'type' => 'input',
+				'renderType' => 'inputLink',
+				'size' => 50,
+				'max' => 255,
+				'eval' => 'trim',
+				'fieldControl' => [
+					'linkPopup' => [
+						'options' => [
+							'blindLinkFields' => 'class, params, target, title',
+							'blindLinkOptions' => 'file, folder, mail, page, spec, telephone',
+						],
+					],
+				],
+            		],
 			'external' => [
 				0 => [
 					'field' => 'image_url'
 				]
 			]
-        ],
-        'subscriptions' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.subscriptions',
-            'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int',
-                'default' => 0
-            ]
-        ],
-        'organizer' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.organizer',
-            'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_verowaconnect_domain_model_organizer',
-                'foreign_field' => 'event',
-                'maxitems' => 9999,
-                'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
-            ],
-
-        ],
-        'rooms' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.rooms',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'tx_verowaconnect_domain_model_room',
-                'default' => 0,
-                'minitems' => 0,
-                'maxitems' => 1,
-            ],
-            
-        ],
-        'room_id' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.room_id',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
-                'default' => ''
-            ],
+		],
+		'image_width' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.image_width',
+			'config' => [
+				'type' => 'input',
+			],
 			'external' => [
 				0 => [
-					'arrayPath' => 'room/id'
+					'field' => 'image_width'
 				]
 			]
-        ],
-        'room_name' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.room_name',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
-                'default' => ''
-            ],
+		],
+		'image_height' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:verowa_connector/Resources/Private/Language/locallang_db.xlf:tx_verowaconnector_domain_model_event.image_height',
+			'config' => [
+				'type' => 'input',
+			],
 			'external' => [
 				0 => [
-					'arrayPath' => 'room/name'
+					'field' => 'image_height'
 				]
 			]
-        ],
-        'room_public_name' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.room_public_name',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
-                'default' => ''
-            ],
-			'external' => [
-				0 => [
-					'arrayPath' => 'room/public_name'
-				]
-			]
-        ],
-        'room_location_name' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.room_location_name',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
-                'default' => ''
-            ],
-			'external' => [
-				0 => [
-					'arrayPath' => 'room/location_name'
-				]
-			]
-        ],
-        'room_location_url' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.room_location_url',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
-                'default' => ''
-            ],
-			'external' => [
-				0 => [
-					'arrayPath' => 'room/location_url'
-				]
-			]
-        ],
-        'room_location_url_is_external' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:verowa_connect/Resources/Private/Language/locallang_db.xlf:tx_verowaconnect_domain_model_event.room_location_url_is_external',
-            'config' => [
-                'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ]
-                ],
-                'default' => 0,
-            ],
-			'external' => [
-				0 => [
-					'arrayPath' => 'room/location_url_is_external'
-				]
-			]
-        ],
-    
-    ],
+		],
+	],
 ];
