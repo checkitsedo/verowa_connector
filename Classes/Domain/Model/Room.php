@@ -21,11 +21,46 @@ class Room extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * roomId
+     * locationName
      *
      * @var string
      */
-    protected $roomId = '';
+    protected $locationName = '';
+
+    /**
+     * locationId
+     *
+     * @var int
+     */
+    protected $locationId = 0;
+
+    /**
+     * street
+     *
+     * @var string
+     */
+    protected $street = '';
+
+    /**
+     * postcode
+     *
+     * @var string
+     */
+    protected $postcode = '';
+
+    /**
+     * city
+     *
+     * @var string
+     */
+    protected $city = '';
+
+    /**
+     * locationUrlIsExternal
+     *
+     * @var bool
+     */
+    protected $locationUrlIsExternal = false;
 
     /**
      * roomName
@@ -35,52 +70,160 @@ class Room extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $roomName = '';
 
     /**
-     * roomPublicName
+     * roomId
+     *
+     * @var int
+     */
+    protected $roomId = 0;
+
+    /**
+     * shortcut
      *
      * @var string
      */
-    protected $roomPublicName = '';
+    protected $shortcut = '';
 
     /**
-     * roomLocationName
+     * locationUrl
      *
      * @var string
      */
-    protected $roomLocationName = '';
+    protected $locationUrl = '';
 
     /**
-     * roomLocationUrl
+     * Returns the locationName
      *
-     * @var string
+     * @return string $locationName
      */
-    protected $roomLocationUrl = '';
-
-    /**
-     * roomLocationUrlIsExternal
-     *
-     * @var bool
-     */
-    protected $roomLocationUrlIsExternal = false;
-
-    /**
-     * Returns the roomId
-     *
-     * @return string $roomId
-     */
-    public function getRoomId()
+    public function getLocationName()
     {
-        return $this->roomId;
+        return $this->locationName;
     }
 
     /**
-     * Sets the roomId
+     * Sets the locationName
      *
-     * @param string $roomId
+     * @param string $locationName
      * @return void
      */
-    public function setRoomId(string $roomId)
+    public function setLocationName(string $locationName)
     {
-        $this->roomId = $roomId;
+        $this->locationName = $locationName;
+    }
+
+    /**
+     * Returns the locationId
+     *
+     * @return int $locationId
+     */
+    public function getLocationId()
+    {
+        return $this->locationId;
+    }
+
+    /**
+     * Sets the locationId
+     *
+     * @param int $locationId
+     * @return void
+     */
+    public function setLocationId(int $locationId)
+    {
+        $this->locationId = $locationId;
+    }
+
+    /**
+     * Returns the street
+     *
+     * @return string $street
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * Sets the street
+     *
+     * @param string $street
+     * @return void
+     */
+    public function setStreet(string $street)
+    {
+        $this->street = $street;
+    }
+
+    /**
+     * Returns the postcode
+     *
+     * @return string $postcode
+     */
+    public function getPostcode()
+    {
+        return $this->postcode;
+    }
+
+    /**
+     * Sets the postcode
+     *
+     * @param string $postcode
+     * @return void
+     */
+    public function setPostcode(string $postcode)
+    {
+        $this->postcode = $postcode;
+    }
+
+    /**
+     * Returns the city
+     *
+     * @return string $city
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Sets the city
+     *
+     * @param string city
+     * @return void
+     */
+    public function setCity(string $city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * Returns the locationUrlIsExternal
+     *
+     * @return bool $locationUrlIsExternal
+     */
+    public function getLocationUrlIsExternal()
+    {
+        return $this->locationUrlIsExternal;
+    }
+
+    /**
+     * Sets the locationUrlIsExternal
+     *
+     * @param bool $locationUrlIsExternal
+     * @return void
+     */
+    public function setLocationUrlIsExternal(bool $locationUrlIsExternal)
+    {
+        $this->locationUrlIsExternal = $locationUrlIsExternal;
+    }
+
+    /**
+     * Returns the boolean state of locationUrlIsExternal
+     *
+     * @return bool
+     */
+    public function isLocationUrlIsExternal()
+    {
+        return $this->locationUrlIsExternal;
     }
 
     /**
@@ -105,96 +248,65 @@ class Room extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the roomPublicName
+     * Returns the roomId
      *
-     * @return string $roomPublicName
+     * @return int $roomId
      */
-    public function getRoomPublicName()
+    public function getRoomId()
     {
-        return $this->roomPublicName;
+        return $this->roomId;
     }
 
     /**
-     * Sets the roomPublicName
+     * Sets the roomId
      *
-     * @param string $roomPublicName
+     * @param int $roomId
      * @return void
      */
-    public function setRoomPublicName(string $roomPublicName)
+    public function setRoomId(int $roomId)
     {
-        $this->roomPublicName = $roomPublicName;
+        $this->roomId = $roomId;
     }
 
     /**
-     * Returns the roomLocationName
+     * Returns the shortcut
      *
-     * @return string $roomLocationName
+     * @return string $shortcut
      */
-    public function getRoomLocationName()
+    public function getShortcut()
     {
-        return $this->roomLocationName;
+        return $this->shortcut;
     }
 
     /**
-     * Sets the roomLocationName
+     * Sets the shortcut
      *
-     * @param string $roomLocationName
+     * @param string $shortcut
      * @return void
      */
-    public function setRoomLocationName(string $roomLocationName)
+    public function setShortcut(string $shortcut)
     {
-        $this->roomLocationName = $roomLocationName;
+        $this->shortcut = $shortcut;
     }
 
     /**
-     * Returns the roomLocationUrl
+     * Returns the locationUrl
      *
-     * @return string $roomLocationUrl
+     * @return string $locationUrl
      */
-    public function getRoomLocationUrl()
+    public function getLocationUrl()
     {
-        return $this->roomLocationUrl;
+        return $this->locationUrl;
     }
 
     /**
-     * Sets the roomLocationUrl
+     * Sets the locationUrl
      *
-     * @param string $roomLocationUrl
+     * @param string $locationUrl
      * @return void
      */
-    public function setRoomLocationUrl(string $roomLocationUrl)
+    public function setLocationUrl(string $locationUrl)
     {
-        $this->roomLocationUrl = $roomLocationUrl;
-    }
-
-    /**
-     * Returns the roomLocationUrlIsExternal
-     *
-     * @return bool $roomLocationUrlIsExternal
-     */
-    public function getRoomLocationUrlIsExternal()
-    {
-        return $this->roomLocationUrlIsExternal;
-    }
-
-    /**
-     * Sets the roomLocationUrlIsExternal
-     *
-     * @param bool $roomLocationUrlIsExternal
-     * @return void
-     */
-    public function setRoomLocationUrlIsExternal(bool $roomLocationUrlIsExternal)
-    {
-        $this->roomLocationUrlIsExternal = $roomLocationUrlIsExternal;
-    }
-
-    /**
-     * Returns the boolean state of roomLocationUrlIsExternal
-     *
-     * @return bool
-     */
-    public function isRoomLocationUrlIsExternal()
-    {
-        return $this->roomLocationUrlIsExternal;
+        $this->locationUrl = $locationUrl;
     }
 }
