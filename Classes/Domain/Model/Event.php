@@ -93,7 +93,7 @@ class Event extends AbstractEntity
     /**
      * organizer
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $organizer = null;
@@ -101,7 +101,7 @@ class Event extends AbstractEntity
     /**
      * coorganizers
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
 
@@ -112,23 +112,79 @@ class Event extends AbstractEntity
      */
 
     /**
+     * service1
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * service2
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * service3
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * service4
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * service5
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * service6
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * service7
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
+     * service8
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+
+    /**
      * lectors
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
 
     /**
      * organists
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
 
     /**
      * vergers
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
 
@@ -137,6 +193,7 @@ class Event extends AbstractEntity
      *
      * @var string
      */
+    protected $catering = '';
 
     /**
      * withSacrament
@@ -162,7 +219,7 @@ class Event extends AbstractEntity
     /**
      * childcarePerson
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
 
@@ -245,19 +302,22 @@ class Event extends AbstractEntity
     /**
      * targetGroups
      *
-     * @var int
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Targetgroup>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
 
     /**
      * layers
      *
-     * @var int
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Layer>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
 
     /**
      * rooms
      *
-     * @var \Checkitsedo\VerowaConnector\Domain\Model\Room
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Room>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $rooms = null;
 
@@ -316,7 +376,10 @@ class Event extends AbstractEntity
      */
     public function initializeObject()
     {
-        $this->organizer = $this->organizer ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->person = $this->person ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	$this->targetgroup = $this->targetgroup ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	$this->layer = $this->layer ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	$this->room = $this->room ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -521,29 +584,29 @@ class Event extends AbstractEntity
     /**
      * Adds a Organizer
      *
-     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizer
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Person $person
      * @return void
      */
-    public function addOrganizer(\Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizer)
+    public function addOrganizer(\Checkitsedo\VerowaConnector\Domain\Model\Person $person)
     {
-        $this->organizer->attach($organizer);
+        $this->organizer->attach($person);
     }
 
     /**
      * Removes a Organizer
      *
-     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizerToRemove The Organizer to be removed
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Person $personToRemove The Organizer to be removed
      * @return void
      */
-    public function removeOrganizer(\Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizerToRemove)
+    public function removeOrganizer(\Checkitsedo\VerowaConnector\Domain\Model\Person $personToRemove)
     {
-        $this->organizer->detach($organizerToRemove);
+        $this->organizer->detach($personToRemove);
     }
 
     /**
      * Returns the organizer
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person> $person
      */
     public function getOrganizer()
     {
@@ -553,38 +616,38 @@ class Event extends AbstractEntity
     /**
      * Sets the organizer
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person> $person
      * @return void
      */
-    public function setOrganizer(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $organizer)
+    public function setOrganizer(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $person)
     {
-        $this->organizer = $organizer;
+        $this->organizer = $person;
     }
 
     /**
      * Adds a Coorganizer
      *
-     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizer
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Person $person
      * @return void
      */
 
     /**
      * Removes a Coorganizer
      *
-     * @param \Checkitsedo\VerowaConnector\Domain\Model\Organizer $organizerToRemove The Organizer to be removed
+     * @param \Checkitsedo\VerowaConnector\Domain\Model\Person $personToRemove The Organizer to be removed
      * @return void
      */
 
     /**
      * Returns the coorganizer
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person> $person
      */
  
     /**
      * Sets the coorganizer
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Organizer> $organizer
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Checkitsedo\VerowaConnector\Domain\Model\Person> $person
      * @return void
      */
 
@@ -608,6 +671,46 @@ class Event extends AbstractEntity
     {
         $this->furtherCoorganizers = $furtherCoorganizers;
     }
+
+    /**
+     * service1 (int)
+     *
+     */
+
+    /**
+     * service2 (int)
+     *
+     */
+
+    /**
+     * service3 (int)
+     *
+     */
+
+    /**
+     * service4 (int)
+     *
+     */
+
+    /**
+     * service5 (int)
+     *
+     */
+
+    /**
+     * service6 (int)
+     *
+     */
+
+    /**
+     * service7 (int)
+     *
+     */
+
+    /**
+     * service8 (int)
+     *
+     */
 
     /**
      * lectors (int)
@@ -701,6 +804,27 @@ class Event extends AbstractEntity
      * childcareText (string)
      *
      */
+
+    /**
+     * Returns the childcareText
+     *
+     * @return string $childcareText
+     */
+    public function getChildcareText()
+    {
+        return $this->childcareText;
+    }
+
+    /**
+     * Sets the childcareText
+     *
+     * @param string $childcareText
+     * @return void
+     */
+    public function setChildcareText(string $childcareText)
+    {
+        $this->childcareText = $childcareText;
+    }
 
     /**
      * childcarePerson (int)
