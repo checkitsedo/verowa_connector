@@ -91,6 +91,7 @@ CREATE TABLE tx_verowaconnector_domain_model_targetgroup (
 	group_id int(11) unsigned NOT NULL,
 	name varchar(255) NOT NULL DEFAULT '',
 	longname mediumtext,
+	events int(11) unsigned NOT NULL DEFAULT 0 COMMENT 'events (events) count',
 );
 
 #
