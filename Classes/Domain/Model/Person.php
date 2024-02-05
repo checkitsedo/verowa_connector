@@ -15,7 +15,7 @@ namespace Checkitsedo\VerowaConnector\Domain\Model;
  */
 
 /**
- * Organizer
+ * P
  */
 class Organizer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
