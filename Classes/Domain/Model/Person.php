@@ -17,146 +17,202 @@ namespace Checkitsedo\VerowaConnector\Domain\Model;
 /**
  * P
  */
-class Organizer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Person extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * organizerId
+     * personId
      *
      * @var string
      */
-    protected $organizerId = '';
+    protected $personId = '';
 
     /**
-     * organizerName
+     * name
      *
      * @var string
      */
-    protected $organizerName = '';
+    protected $name = '';
 
     /**
-     * organizerPhone
+     * firstname
      *
      * @var string
      */
-    protected $organizerPhone = '';
+    protected $firstname = '';
 
     /**
-     * organizerProfession
+     * lastname
      *
      * @var string
      */
-    protected $organizerProfession = '';
+    protected $lastname = '';
 
     /**
-     * organizerEmail
+     * phone
      *
      * @var string
      */
-    protected $organizerEmail = '';
+    protected $phone = '';
 
     /**
-     * Returns the organizerId
+     * profession
      *
-     * @return string $organizerId
+     * @var string
      */
-    public function getOrganizerId()
+    protected $profession = '';
+
+    /**
+     * email
+     *
+     * @var string
+     */
+    protected $email = '';
+
+    /**
+     * Returns the personId
+     *
+     * @return string $personId
+     */
+    public function getPersonId()
     {
-        return $this->organizerId;
+        return $this->personId;
     }
 
     /**
-     * Sets the organizerId
+     * Sets the personId
      *
-     * @param string $organizerId
+     * @param string $personId
      * @return void
      */
-    public function setOrganizerId(string $organizerId)
+    public function setPersonId(string $personId)
     {
-        $this->organizerId = $organizerId;
+        $this->personId = $personId;
     }
 
     /**
-     * Returns the organizerName
+     * Returns the name
      *
-     * @return string $organizerName
+     * @return string $name
      */
-    public function getOrganizerName()
+    public function getName()
     {
-        return $this->organizerName;
+        return $this->name;
     }
 
     /**
-     * Sets the organizerName
+     * Sets the name
      *
-     * @param string $organizerName
+     * @param string $name
      * @return void
      */
-    public function setOrganizerName(string $organizerName)
+    public function setName(string $name)
     {
-        $this->organizerName = $organizerName;
+        $this->name = $name;
     }
 
     /**
-     * Returns the organizerPhone
+     * Returns the firstname
      *
-     * @return string $organizerPhone
+     * @return string $firstname
      */
-    public function getOrganizerPhone()
+    public function getFirstname()
     {
-        return $this->organizerPhone;
+        return $this->firstname;
     }
 
     /**
-     * Sets the organizerPhone
+     * Sets the firstname
      *
-     * @param string $organizerPhone
+     * @param string $firstname
      * @return void
      */
-    public function setOrganizerPhone(string $organizerPhone)
+    public function setFirstname(string $firstname)
     {
-        $this->organizerPhone = $organizerPhone;
+        $this->firstname = $firstname;
     }
 
     /**
-     * Returns the organizerProfession
+     * Returns the lastname
      *
-     * @return string $organizerProfession
+     * @return string $lastname
      */
-    public function getOrganizerProfession()
+    public function getLastname()
     {
-        return $this->organizerProfession;
+        return $this->lastname;
     }
 
     /**
-     * Sets the organizerProfession
+     * Sets the lastname
      *
-     * @param string $organizerProfession
+     * @param string $lastname
      * @return void
      */
-    public function setOrganizerProfession(string $organizerProfession)
+    public function setLastname(string $lastname)
     {
-        $this->organizerProfession = $organizerProfession;
+        $this->lastname = $lastname;
     }
 
     /**
-     * Returns the organizerEmail
+     * Returns the phone
      *
-     * @return string $organizerEmail
+     * @return string $phone
      */
-    public function getOrganizerEmail()
+    public function getPhone()
     {
-        return $this->organizerEmail;
+        return $this->phone;
     }
 
     /**
-     * Sets the organizerEmail
+     * Sets the phone
      *
-     * @param string $organizerEmail
+     * @param string $phone
      * @return void
      */
-    public function setOrganizerEmail(string $organizerEmail)
+    public function setPhone(string $phone)
     {
-        $this->organizerEmail = $organizerEmail;
+        $this->phone = $phone;
+    }
+
+    /**
+     * Returns the profession
+     *
+     * @return string $profession
+     */
+    public function getProfession()
+    {
+        return $this->profession;
+    }
+
+    /**
+     * Sets the profession
+     *
+     * @param string $profession
+     * @return void
+     */
+    public function setProfession(string $profession)
+    {
+        $this->profession = $profession;
+    }
+
+    /**
+     * Returns the email
+     *
+     * @return string $email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Sets the email
+     *
+     * @param string $email
+     * @return void
+     */
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
     }
 }
