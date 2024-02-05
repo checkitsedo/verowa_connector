@@ -14,11 +14,27 @@ call_user_func(
 		);
 		
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-			'tx_verowaconnector_domain_model_organizer',
-			'EXT:verowa_connector/Resources/Private/Language/locallang_csh_tx_verowaconnector_domain_model_organizer.xlf'
+			'tx_verowaconnector_domain_model_person',
+			'EXT:verowa_connector/Resources/Private/Language/locallang_csh_tx_verowaconnector_domain_model_person.xlf'
 		);
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
-			'tx_verowaconnector_domain_model_organizer'
+			'tx_verowaconnector_domain_model_person'
+		);
+
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tx_verowaconnector_domain_model_targetgroup',
+			'EXT:verowa_connector/Resources/Private/Language/locallang_csh_tx_verowaconnector_domain_model_targetgroup.xlf'
+		);
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+			'tx_verowaconnector_domain_model_targetgroup'
+		);
+
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+			'tx_verowaconnector_domain_model_layer',
+			'EXT:verowa_connector/Resources/Private/Language/locallang_csh_tx_verowaconnector_domain_model_layer.xlf'
+		);
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+			'tx_verowaconnector_domain_model_layer'
 		);
 		
 		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
