@@ -134,6 +134,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'location_name'
+				]
+			]
         ],
         'location_id' => [
             'exclude' => true,
@@ -144,6 +149,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'location_id'
+				]
+			]
         ],
         'street' => [
             'exclude' => true,
@@ -154,6 +164,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'street'
+				]
+			]
         ],
         'postcode' => [
             'exclude' => true,
@@ -164,6 +179,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'postcode'
+				]
+			]
         ],
         'city' => [
             'exclude' => true,
@@ -174,6 +194,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'city'
+				]
+			]
         ],
         'location_url_is_external' => [
             'exclude' => true,
@@ -188,7 +213,12 @@ return [
                     ]
                 ],
                 'default' => 0,
-            ]
+            ],
+		'external' => [
+				0 => [
+					'field' => 'location_url_is_external'
+				]
+			]
         ],
         'room_name' => [
             'exclude' => true,
@@ -199,6 +229,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'room_name'
+				]
+			]
         ],
         'room_id' => [
             'exclude' => true,
@@ -209,6 +244,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'room_id'
+				]
+			]
         ],
         'shortcut' => [
             'exclude' => true,
@@ -219,6 +259,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'shortcut'
+				]
+			]
         ],
         'location_url' => [
             'exclude' => true,
@@ -229,6 +274,11 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ],
+		'external' => [
+				0 => [
+					'field' => 'location_url'
+				]
+			]
         ],    
     ],
 ];
